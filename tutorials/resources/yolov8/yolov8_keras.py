@@ -289,7 +289,7 @@ class Detect:
         self.no = nc + self.reg_max * 4  # number of outputs per anchor
         self.feat_sizes = [80, 40, 20]
         self.stride_sizes = [8, 16, 32]
-        img_size = 640
+        img_size = 416 #changed from 640
         nd0, nd1, nd2 = np.cumsum([sz ** 2 for sz in self.feat_sizes]) # split per stride/resolution level
 
         c2, c3 = max((16, ch[0] // 4, self.reg_max * 4)), max(ch[0], self.nc)  # channels
